@@ -1,0 +1,11 @@
+variable "app_name" {}
+variable "app_env" {}
+variable "app_cpu" {}
+variable "app_memory" {}
+variable "app_image" {}
+variable "aws_region" {}
+variable "fargate_cpu" {}
+variable "fargate_memory" {}
+variable "task_role_arn" {}
+variable "execution_role_arn" {}
+variable "log_group_prefix" {}

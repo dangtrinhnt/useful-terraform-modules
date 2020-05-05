@@ -104,6 +104,16 @@ $ terraform plan -var="public_subnet_ids=<your public subnet ids>" \
                  -var="aws_certificate_arn=<your aws ssl cert arn>" \
                  -var="aws_acc_id=<your aws acc id>" \
                  -var="domain_name=<your aws hosted domain>"
+$ terraform apply -var="public_subnet_ids=<your public subnet ids>" \
+                 -var="private_subnet_ids=<your private subnet ids>" \
+                 -var="vpc_id=<your vpc id>" \
+                 -var="cidr_block=<your vpc cidr>" \
+                 -var="app_image=<your kong image url>" \
+                 -var="task_role_arn=<the task role arn>" \
+                 -var="execution_role_arn=<the execution role arn>" \
+                 -var="aws_certificate_arn=<your aws ssl cert arn>" \
+                 -var="aws_acc_id=<your aws acc id>" \
+                 -var="domain_name=<your aws hosted domain>"
 ```
 
 ## Maintainers

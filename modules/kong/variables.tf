@@ -22,14 +22,12 @@ variable "private_subnet_ids" {
     type    = "list"
 }
 
-variable "vpc_id" {
-}
+variable "vpc_id" {}
 
-variable "cidr_block"{
-}
+variable "cidr_block"{}
 
 variable "aws_region" {
-    description = "The AWS region to create things in"
+    description = "The AWS region"
     default     = "us-east-1"
 }
 
@@ -40,7 +38,7 @@ variable "app_name" {
 
 variable "app_env" {
     description = "The app environment to deploy applications"
-    default     = "prod"
+    default = "myenv"
 }
 
 variable "app_port" {
@@ -55,12 +53,12 @@ variable "app_desired_count" {
 
 variable "fargate_cpu" {
     description = "Fargate instance CPU units to provision (1 vCPU = 1024 CPU units)"
-    default     = "512"
+    default     = 512
 }
 
 variable "fargate_memory" {
     description = "Fargate instance memory to provision (in MiB)"
-    default     = "1024"
+    default     = 1024
 }
 
 variable "app_cpu" {
@@ -74,12 +72,12 @@ variable "app_memory" {
 }
 
 variable "app_image" {
-    description = "The app docker image url"
+    description = "The Kong docker image url"
 }
 
 variable "log_group_prefix" {
     description = "CloudWatch log group prefix"
-    default     = "mycluster"
+    default = "kong"
 }
 
 variable "task_role_arn" {
@@ -98,8 +96,10 @@ variable "ecs_autoscale_min_instances" {
     default = 8
 }
 
-variable "aws_certificate_arn" {
-}
+variable "aws_certificate_arn" {}
 
-variable "aws_acc_id" {
+variable "aws_acc_id" {}
+
+variable "domain_name" {
+  description = "The domain name hosting on AWS route53 service."
 }

@@ -1,12 +1,12 @@
 provider "aws" {
-    alias  = "us-east-1"
-    region = "us-east-1"
-    version = "~> 1.60"
+  alias  = "us-east-1"
+  region = "us-east-1"
+  version = "~> 1.60"
 }
 
 provider "mysql" {
-  endpoint = "<aws mysql rds writer node endpoint>:3306"
-  username = "${var.master_username}"
-  password = "${var.master_password}"
+  endpoint = "${aws_db_instance.default.endpoint}"
+  username = "${aws_db_instance.default.username}"
+  password = "${aws_db_instance.default.password}"
   # proxy    = "${var.proxy}"
 }

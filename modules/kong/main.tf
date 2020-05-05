@@ -14,12 +14,12 @@ module "ecs_cluster" {
 }
 
 data "aws_route53_zone" "main" {
-  name = "dangtrinh.com."
+  name = "${var.domain_name}."
 }
 
 resource "aws_route53_record" "kong" {
   zone_id = "${data.aws_route53_zone.main.zone_id}"
-  name    = "${var.app_env}api.dangtrinh.com"
+  name    = "${var.app_env}api.${var.domain_name}"
   type    = "A"
 
   alias {

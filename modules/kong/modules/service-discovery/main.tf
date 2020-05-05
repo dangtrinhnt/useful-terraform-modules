@@ -1,6 +1,6 @@
 resource "aws_service_discovery_private_dns_namespace" "main" {
     name        = "${var.app_env}"
-    description = "The service discovery service for MSA services"
+    description = "The service discovery service for services"
     vpc         = "${var.vpc_id}"
 }
 
